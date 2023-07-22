@@ -48,8 +48,9 @@ except URLError as e:
 # output the screen as table
 
 # import snowflake.connector
- 
-# my_cur = my_cnx.cursor()
+
+my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+my_cur = my_cnx.cursor()
 # my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 # my_cur.execute("SELECT * from fruit_load_list")
 # my_data_row = my_cur.fetchone()
